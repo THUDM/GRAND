@@ -12,4 +12,4 @@ This is the anonymous code of paper: Graph Random Neural Network
 * Running 100 trials with random initializations on Cora:
 ```sh run100_cora.sh ```
 * Calculating the average accuracy of 100 trails on Cora:
-```python result_100run.py --cora ```
+```python result_100run.py cora ```

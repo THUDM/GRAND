@@ -3,4 +3,3 @@ networkx==1.11
 torch==1.2.0
 numpy==1.16.4
 scikit_learn==0.22.1
-sparsesvd==0.2.2

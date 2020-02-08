@@ -16,4 +16,4 @@ This is the anonymous code of paper: Graph Random Neural Network
 
 ## Running Environment 
 
-The experimental results reported in paper are conducted on a single NVIDIA GeForce RTX 2080 Ti with 11 GB memory size with CUDA 10.0, which might be a little inconsistent with the results induced by other platforms.
+The experimental results reported in paper are conducted on a single NVIDIA GeForce RTX 2080 Ti with CUDA 10.0, which might be a little inconsistent with the results induced by other platforms.

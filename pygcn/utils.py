@@ -18,7 +18,6 @@ def encode_onehot(labels):
     return labels_onehot
 
 def load_data(dataset_str = 'cora'):
-    """Load data."""
     names = ['x', 'y', 'tx', 'ty', 'allx', 'ally', 'graph']
     objects = []
     for i in range(len(names)):
@@ -32,8 +31,6 @@ def load_data(dataset_str = 'cora'):
     test_idx_range = np.sort(test_idx_reorder)
 
     if dataset_str == 'citeseer':
-        # Fix citeseer dataset (there are some isolated nodes in the graph)
-        # Find isolated nodes, add them as zero-vecs into the right position
         test_idx_range_full = range(min(test_idx_reorder), max(test_idx_reorder)+1)
         tx_extended = sp.lil_matrix((len(test_idx_range_full), x.shape[1]))
         tx_extended[test_idx_range-min(test_idx_range), :] = tx
@@ -44,15 +41,11 @@ def load_data(dataset_str = 'cora'):
 
     features = sp.vstack((allx, tx)).tolil()
     features[test_idx_reorder, :] = features[test_idx_range, :]
-    # normalize
     features = normalize(features)
 
     adj = nx.adjacency_matrix(nx.from_dict_of_lists(graph))
-        # build symmetric adjacency matrix
     adj = adj + adj.T.multiply(adj.T > adj) - adj.multiply(adj.T > adj)
 
-    # network_emb = pros(adj)
-    # network_emb = 0
     
     adj = adj + sp.eye(adj.shape[0])
     D1_ = np.array(adj.sum(axis=1))**(-0.5)
@@ -80,7 +73,6 @@ def load_data(dataset_str = 'cora'):
     idx_test = test_idx_range.tolist()
 
     features = torch.FloatTensor(np.array(features.todense()))
-    # labels = torch.LongTensor(np.where(labels)[1])
     labels = torch.LongTensor(np.argmax(labels, -1))
     A = sparse_mx_to_torch_sparse_tensor(A)
     idx_train = torch.LongTensor(idx_train)
@@ -90,14 +82,12 @@ def load_data(dataset_str = 'cora'):
     return A, features, labels, idx_train, idx_val, idx_test
 
 def parse_index_file(filename):
-    """Parse index file."""
     index = []
     for line in open(filename):
         index.append(int(line.strip()))
     return index
 
 def normalize(mx):
-    """Row-normalize sparse matrix"""
     rowsum = np.array(mx.sum(1))
     r_inv = np.power(rowsum, -1).flatten()
     r_inv[np.isinf(r_inv)] = 0.
@@ -114,7 +104,6 @@ def accuracy(output, labels):
 
 
 def sparse_mx_to_torch_sparse_tensor(sparse_mx):
-    """Convert a scipy sparse matrix to a torch sparse tensor."""
     sparse_mx = sparse_mx.tocoo().astype(np.float32)
     indices = torch.from_numpy(
         np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64))
@@ -122,7 +111,6 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
     shape = torch.Size(sparse_mx.shape)
     return torch.sparse.FloatTensor(indices, values, shape)
 
-# added by jiezhang
 
 def label_vector_generator(adj, label_vector, index = [], order=1, shuffle=False, style=0):
     label_vectors = []
@@ -149,9 +137,6 @@ def feature_generator(adj, features, order=0):
     features_1 = [mask_1.cuda() * features]
     features_2 = [mask_2.cuda() * features]
 
-    # D = torch.spmm(adj, torch.ones[n, 1])**(-0.5)
-    # A = D*A
-    # A = torch.squeeze(D)*A
     alpha = 1
     for i in range(order):
         features_1.append(alpha*torch.spmm(adj, features_1[-1]) + (1-alpha)*features_1[0])

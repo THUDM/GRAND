@@ -1,5 +1,5 @@
 # grand
-This is the anonymous code of paper: Graph Random Neural Network
+This is the code of paper: Graph Random Neural Network
 
 ## Requirements
 * Python 3.7.3

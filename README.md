@@ -27,6 +27,14 @@ Please cite our paper if you think our work is helpful to you:
 * Calculating the average accuracy of 100 trails on Cora:
 ```python result_100run.py cora ```
 
+## Results
+
+Our model achieves the following accuracies on Cora, CiteSeer and Pubmed with the public splits:
+
+| Model name   |   Cora    |  CiteSeer |  Pubmed   |
+| ------------ | --------- | --------- | --------- |
+| GRAND        |   85.4%   |    75.4%  |   82.7%   |
+
 ## Running Environment 
 
 The experimental results reported in paper are conducted on a single NVIDIA GeForce RTX 2080 Ti with CUDA 10.0, which might be slightly inconsistent with the results induced by other platforms.

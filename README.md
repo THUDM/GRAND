@@ -10,7 +10,7 @@ Please cite our paper if you think our work is helpful to you:
   title={Graph Random Neural Network for Semi-Supervised Learning on Graphs},
   author={Wenzheng Feng, Jie Zhang, Yuxiao Dong, Yu Han, Huanbo Luan, Qian Xu, Qiang Yang, Evgeny Kharlamov, Jie Tang},
   booktitle={NeurIPS'20},
-  year={202}
+  year={2020}
 }
 ```
 

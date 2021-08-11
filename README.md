@@ -38,3 +38,7 @@ Our model achieves the following accuracies on Cora, CiteSeer and Pubmed with th
 ## Running Environment 
 
 The experimental results reported in paper are conducted on a single NVIDIA GeForce RTX 2080 Ti with CUDA 10.0, which might be slightly inconsistent with the results induced by other platforms.
+
+## The AMiner-CS Dataset
+The AMiner-CS dataset can be downloaded from [google drive](https://drive.google.com/file/d/1yG5BP0GJKoB2Q07Uqd1DuC2tMf4EZo4u/view?usp=sharing) or [baidu drive](https://pan.baidu.com/s/1QWsioe2hPTFWyoL3aF6jlQ) with password l0pe.
+This dataset is extracted from [AMiner Citation Graph](https://www.aminer.cn/citation). Each node of the graph corresponds to a paper in computer science, and edges represent citation relations between papers. We use averaged [GLOVE-100](https://nlp.stanford.edu/projects/glove/) word vector of paper abstract as the node feature vector. These papers are manually categorized into 18 topics based on their publication venues. We use 20 samples per class for training, 30 samples per class for validation and the remaining nodes for test in our expeirments.

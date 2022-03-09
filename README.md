@@ -37,7 +37,9 @@ The AMiner-CS dataset can be downloaded from [google drive](https://drive.google
 This dataset is extracted from [AMiner Citation Graph](https://www.aminer.cn/citation). Each node of the graph corresponds to a paper in computer science, and edges represent citation relations between papers. We use averaged [GLOVE-100](https://nlp.stanford.edu/projects/glove/) word vector of paper abstract as the node feature vector. These papers are manually categorized into 18 topics based on their publication venues. We use 20 samples per class for training, 30 samples per class for validation and the remaining nodes for test in our expeirments.
 
 
-Please cite our paper if you think our work is helpful to you:
+## Citing GRAND
+
+Please consider citing our paper if you find this work is helpful to you:
 
 ```
 @inproceedings{feng2020grand,

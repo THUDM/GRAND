@@ -7,18 +7,6 @@ The implementation of **GRAND_DropEdge** (GRAND with DropEdge as perturbation me
 
 The DGL implementation of **GRAND** is available at https://github.com/hengruizhang98/GRAND.
 
-
-Please cite our paper if you think our work is helpful to you:
-
-```
-@inproceedings{feng2020grand,
-  title={Graph Random Neural Network for Semi-Supervised Learning on Graphs},
-  author={Feng, Wenzheng and Zhang, Jie and Dong, Yuxiao and Han, Yu and Luan, Huanbo and Xu, Qian and Yang, Qiang and Kharlamov, Evgeny and Tang, Jie},
-  booktitle={NeurIPS'20},
-  year={2020}
-}
-```
-
 ## Requirements
 * Python 3.7.3
 * Please install other pakeages by 
@@ -47,3 +35,15 @@ The experimental results reported in paper are conducted on a single NVIDIA GeFo
 ## The AMiner-CS Dataset
 The AMiner-CS dataset can be downloaded from [google drive](https://drive.google.com/file/d/1yG5BP0GJKoB2Q07Uqd1DuC2tMf4EZo4u/view?usp=sharing) or [baidu drive](https://pan.baidu.com/s/1QWsioe2hPTFWyoL3aF6jlQ) with password `l0pe`.
 This dataset is extracted from [AMiner Citation Graph](https://www.aminer.cn/citation). Each node of the graph corresponds to a paper in computer science, and edges represent citation relations between papers. We use averaged [GLOVE-100](https://nlp.stanford.edu/projects/glove/) word vector of paper abstract as the node feature vector. These papers are manually categorized into 18 topics based on their publication venues. We use 20 samples per class for training, 30 samples per class for validation and the remaining nodes for test in our expeirments.
+
+
+Please cite our paper if you think our work is helpful to you:
+
+```
+@inproceedings{feng2020grand,
+  title={Graph Random Neural Network for Semi-Supervised Learning on Graphs},
+  author={Feng, Wenzheng and Zhang, Jie and Dong, Yuxiao and Han, Yu and Luan, Huanbo and Xu, Qian and Yang, Qiang and Kharlamov, Evgeny and Tang, Jie},
+  booktitle={NeurIPS'20},
+  year={2020}
+}
+```

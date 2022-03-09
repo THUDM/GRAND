@@ -3,6 +3,10 @@
 # GRAND
 This is the code of paper: Graph Random Neural Network for Semi-Supervised Learning on Graphs [[arxiv](https://arxiv.org/pdf/2005.11079.pdf)]
 
+The implementation of GRAND_DropEdge is available at https://github.com/wzfhaha/grand_dropedge. 
+The DGL implementation of GRAND is available at https://github.com/hengruizhang98/GRAND.
+
+
 Please cite our paper if you think our work is helpful to you:
 
 ```

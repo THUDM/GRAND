@@ -3,9 +3,14 @@
 # GRAND
 This is the code of paper: **Graph Random Neural Network for Semi-Supervised Learning on Graphs** [[arxiv](https://arxiv.org/pdf/2005.11079.pdf)]
 
+## ❗ News 
+[2022-03-14] [**GRAND+**](http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW22-Feng-et-al-GRAND-plus.pdf) is published for scalable semi-supervised learning on graphs at https://github.com/THUDM/GRAND-plus.
+
 The implementation of **GRAND_DropEdge** (GRAND with DropEdge as perturbation method) is available at https://github.com/wzfhaha/grand_dropedge. 
 
 The DGL implementation of **GRAND** is available at https://github.com/hengruizhang98/GRAND.
+
+
 
 ## Requirements
 * Python 3.7.3
